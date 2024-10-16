@@ -152,14 +152,14 @@ app.post('/upload-file', async (req, res) => {
               db.collection('urls').doc(docId).set({
                 url: url,
                 id: docId,
-                short: `https://aud.vc/${docId}`,
+                short: `https://aides.bz/${docId}`,
                 phone: phonecol,
                 campaign: campaignId,
                 clicks: 0,
                 createdAt: admin.firestore.FieldValue.serverTimestamp()
               });
 
-              newRow[4] = `https://aud.vc/${docId}`;
+              newRow[4] = `https://aides.bz/${docId}`;
             }
 
             return cols.reduce((object, col, index) => {
