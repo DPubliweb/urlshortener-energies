@@ -28,7 +28,7 @@ const serviceAccount = {
     client_x509_cert_url: process.env.FIREBASE_CLIENT_X509_CERT_URL
   };
 
-  
+
 // Setup Firebase
 admin.initializeApp({ credential: admin.credential.cert(serviceAccount) });
 const db = admin.firestore();
@@ -37,7 +37,7 @@ const alphabet = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
 const length = 5;
 const nanoid = customAlphabet(alphabet, length);
 
-const port = process.env.PORT || 8002;
+const port = process.env.PORT || 8080;
 
 const checkBlockedIP = async (req, res, next) => {
   let ip = (req.headers['x-forwarded-for'] || req.connection.remoteAddress).split(',')[0].trim();
